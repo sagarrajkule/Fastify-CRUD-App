@@ -1,30 +1,30 @@
-const productController = require('../controllers/product.controller')
+const productController = require('../controllers/product.controller');
 
 const routes = [
   {
     method: 'GET',
     url: '/api/products',
-    handler: productController.get
+    handler: productController.get,
   },
   {
     method: 'GET',
     url: '/api/product/:id',
-    handler: productController.getById
+    handler: productController.getById,
   },
   {
     method: 'POST',
     url: '/api/product',
-    handler: productController.add
+    handler: productController.add,
   },
   {
     method: 'PUT',
     url: '/api/product/:id',
-    handler: productController.update
+    handler: productController.update,
   },
   {
     method: 'DELETE',
     url: '/api/product/:id',
-    handler: productController.delete
-  }
-]
-exports.routes = routes
+    handler: productController.delete,
+  },
+];
+exports.routes = routes;

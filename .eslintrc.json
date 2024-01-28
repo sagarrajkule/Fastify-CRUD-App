@@ -1,12 +1,43 @@
 {
     "env": {
         "browser": true,
-        "es2021": true
+        "commonjs": true,
+        "es2021": true,
+        "node": true
     },
-    "extends": "standard",
+    "extends": [
+        "eslint:recommended"
+    ],
     "parserOptions": {
         "ecmaVersion": "latest"
     },
     "rules": {
+        "indent": ["error", 2],
+        "quotes": ["error", "single"],
+        "semi": ["error", "always"],
+        // "no-console": "warn",
+        "no-debugger": "warn",
+        "no-var": "error",
+        "prefer-const": "error",
+        "prefer-template": "error",
+        "object-shorthand": "error",
+        "arrow-parens": ["error", "always"],
+        "arrow-spacing": ["error", { "before": true, "after": true }],
+        "prefer-destructuring": ["error", { "object": true, "array": false }],
+        "no-unused-vars": ["error", { "vars": "all", "args": "none", "ignoreRestSiblings": false }],
+        "no-shadow": "error",
+        "eqeqeq": ["error", "always"],
+        "no-trailing-spaces": "error",
+        "comma-dangle": ["error", "always-multiline"],
+        "space-before-blocks": ["error", "always"],
+        "keyword-spacing": ["error", { "before": true, "after": true }],
+        "eol-last": ["error", "always"],
+        "no-multiple-empty-lines": ["error", { "max": 1, "maxBOF": 0, "maxEOF": 1 }],
+        "brace-style": ["error", "1tbs", { "allowSingleLine": true }],
+        "max-len": ["error", { "code": 120, "tabWidth": 2 }],
+        "no-else-return": ["error", { "allowElseIf": false }],
+        "no-useless-constructor": "error",
+        "no-dupe-class-members": "error",
+        "no-useless-escape": "error"
     }
 }

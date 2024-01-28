@@ -3,29 +3,49 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "NODE_ENV=development node ./src/index.js",
-    "start:dev": "NODE_ENV=development nodemon ./src/index.js",
-    "start:stage": "NODE_ENV=staging node ./src/index.js",
-    "start:prod": "NODE_ENV=production node ./src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint --fix ."
+    "start": "node --max_old_space_size=1024 ./src/index.js",
+    "start:dev": "cross-env NODE_ENV=development node --max_old_space_size=1024  ./src/index.js",
+    "start:watch": "cross-env NODE_ENV=development nodemon --max_old_space_size=1024  ./src/index.js",
+    "start:stage": "cross-env NODE_ENV=staging node --max_old_space_size=1024 ./src/index.js",
+    "start:prod": "cross-env NODE_ENV=production node --max_old_space_size=1024 ./src/index.js",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "pretty": "prettier --write \"./**/*.js\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "lint-staged": {
+    "*.js": [
+      "node_modules/.bin/eslint  --fix",
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },  
   "repository": "https://github.com/sagarrajkule/Fastify-CRUD-App.git",
   "author": "sagar rajkule <36569988+sagarrajkule@users.noreply.github.com>",
   "license": "MIT",
   "dependencies": {
     "@fastify/cors": "^9.0.0",
+    "cross-env": "^7.0.3",
     "dotenv": "^16.4.1",
     "fastify": "^4.25.2",
     "fastify-formbody": "^1.0.0",
     "mongoose": "^8.1.1",
-    "nodemon": "^3.0.3"
+    "nodemon": "^3.0.3",
+    "prettier": "^3.2.4"
   },
   "devDependencies": {
     "eslint": "^8.0.1",
     "eslint-config-standard": "^17.1.0",
     "eslint-plugin-import": "^2.25.2",
     "eslint-plugin-n": "^15.0.0 || ^16.0.0 ",
-    "eslint-plugin-promise": "^6.0.0"
+    "eslint-plugin-promise": "^6.0.0",
+    "husky": "^9.0.6",
+    "lint-staged": "^15.2.0"
   }
 }
