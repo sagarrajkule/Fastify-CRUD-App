@@ -1,10 +1,11 @@
 'use strict'
 
+const config = require('./config');
 const fastify = require('fastify')({
 	logger: true
 });
 const cors = require('@fastify/cors');
-const PORT = 3000;
+const PORT = config.PORT;
 
 fastify.register(cors);
 fastify.register(require('fastify-formbody'));
@@ -25,7 +26,7 @@ routes.forEach((route) => {
 const start = async () => {
 	try {
 		await fastify.listen({ 
-			port: PORT || 3000 , 
+			port: PORT, 
 			listenTextResolver: (address) => { 
 				return `Server is listening at ${address}` 
 			} 

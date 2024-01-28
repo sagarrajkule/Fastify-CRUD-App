@@ -1,8 +1,10 @@
 const mongoose = require('mongoose');
 
+const config = require('../config');
+
 async function connect() {
   try {
-    await mongoose.connect('mongodb://localhost:27017/fastifycrud', {
+    await mongoose.connect(config.mongoUrl, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
