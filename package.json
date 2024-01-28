@@ -7,7 +7,8 @@
     "start:dev": "NODE_ENV=development nodemon ./src/index.js",
     "start:stage": "NODE_ENV=staging node ./src/index.js",
     "start:prod": "NODE_ENV=production node ./src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint --fix ."
   },
   "repository": "https://github.com/sagarrajkule/Fastify-CRUD-App.git",
   "author": "sagar rajkule <36569988+sagarrajkule@users.noreply.github.com>",
@@ -19,5 +20,12 @@
     "fastify-formbody": "^1.0.0",
     "mongoose": "^8.1.1",
     "nodemon": "^3.0.3"
+  },
+  "devDependencies": {
+    "eslint": "^8.0.1",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0 || ^16.0.0 ",
+    "eslint-plugin-promise": "^6.0.0"
   }
 }
