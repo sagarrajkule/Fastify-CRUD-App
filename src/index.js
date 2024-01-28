@@ -5,7 +5,7 @@ const fastify = require('fastify')({
 	logger: true
 });
 const cors = require('@fastify/cors');
-const PORT = config.PORT;
+const PORT = config.port;
 
 fastify.register(cors);
 fastify.register(require('fastify-formbody'));
