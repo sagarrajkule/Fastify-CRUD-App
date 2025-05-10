@@ -25,7 +25,7 @@
     "hooks": {
       "pre-commit": "lint-staged"
     }
-  },  
+  },
   "repository": "https://github.com/sagarrajkule/Fastify-CRUD-App.git",
   "author": "sagar rajkule <36569988+sagarrajkule@users.noreply.github.com>",
   "license": "MIT",

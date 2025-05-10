@@ -20,10 +20,9 @@ Before getting started, make sure you have the following installed on your syste
 3.  Install dependencies using Yarn or NPM:
     ```bash
     yarn install
-
     or 
-
     npm install
+    ```
 
 ## MongoDB Configuration
 
@@ -31,26 +30,39 @@ Before getting started, make sure you have the following installed on your syste
 
 2. Update the MongoDB connection string in src/lib/db.js. [Replace 'mongodb://localhost:27017/fastifycrud' with your actual MongoDB connection string.]
 
-## Setup Mongo using Docker
+## To set up the latest MongoDB image using Docker and run a container, follow these steps:
 
-1. Install docker on you mac
+1. Install Docker
+   If you don't have Docker installed, download and install it from the official Docker website. 
 
-2. Pull mongo image
+2. Pull the MongoDB Image
+   Open a terminal or command prompt.
+   Run the below command to download the official MongoDB image from Docker Hub. This command pulls the latest version by default. 
    ```bash
    docker pull mongo
+   ```
 
-3. Pull mongo image
+3. Create a Docker Container
+   Run the following command to create and start a MongoDB container:
    ```bash
-   docker run --name mongo -d -p 27017:27017 mongo
+   docker run -d -p 27017:27017 --name mymongodb mongo
+   ```
+
+    -d: Runs the container in detached mode (in the background). 
+
+    -p 27017:27017: Maps port 27017 on your host machine to port 27017 within the container. MongoDB's default port is 27017. 
+
+    --name mymongodb: Assigns the name "mymongodb" to the container. 
+
+    mongo: Specifies the MongoDB image to use. 
 
 ## Start the Fastify Server
 Run the following command to start the Fastify server:
-
+    ```
     yarn start
-
     or 
-
     npm start
+    ```
 
 ## API Endpoints
     GET /api/products: Retrieve all products.

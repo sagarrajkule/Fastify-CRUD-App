@@ -32,6 +32,7 @@ const start = async () => {
       },
     });
   } catch (error) {
+    console.error('Error starting server:', error);
     fastify.log.error('Error running fastify server');
     process.exit(1);
   }
