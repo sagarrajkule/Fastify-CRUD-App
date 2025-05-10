@@ -31,6 +31,18 @@ Before getting started, make sure you have the following installed on your syste
 
 2. Update the MongoDB connection string in src/lib/db.js. [Replace 'mongodb://localhost:27017/fastifycrud' with your actual MongoDB connection string.]
 
+## Setup Mongo using Docker
+
+1. Install docker on you mac
+
+2. Pull mongo image
+   ```bash
+   docker pull mongo
+
+3. Pull mongo image
+   ```bash
+   docker run --name mongo -d -p 27017:27017 mongo
+
 ## Start the Fastify Server
 Run the following command to start the Fastify server:
 
